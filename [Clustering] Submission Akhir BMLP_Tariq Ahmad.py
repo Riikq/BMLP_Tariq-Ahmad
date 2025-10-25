@@ -10,7 +10,7 @@ df = pd.read_csv(url)
 
 # Load data
 # Tampilkan 5 baris pertamaa dengan fungsi head.
-df.head()
+print(df.head())
 
 # Tinjau jumlah baris kolom dan jenis data dalam dataset dengan info.
 df.info()
