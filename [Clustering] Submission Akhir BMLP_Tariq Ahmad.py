@@ -56,3 +56,11 @@ df.info()
 # Simpan model PCA sebagai perbandingan dengan menjalankan cell code ini joblib.dump(model, "PC_model_clustering.h5")
 # Pastikan yang disiimpan model yang sudah melalui .fit berdasarkan datasetyang sudah dilakukan PCA
 # joblib.dump(___, "PCA_model_clustering.h5")
+
+# Menampilkan analisis deskriptif minimal mean, min dan max untuk fitur numerik.
+# Silakan menambahkan fungsi agregasi lainnya untuk experience lebih baik.
+# pastikan output menghasilkan agregasi dan groupby bersamaan dengan mean, min, dan max
+
+# Mengintegrasikan kembali data yang telah di-inverse dengan hasil cluster.
+# Simpan Data
+# ___.to_csv('data_clustering_incerse.csv', index=False)
