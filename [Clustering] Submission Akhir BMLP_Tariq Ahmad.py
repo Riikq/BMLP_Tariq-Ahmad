@@ -1,16 +1,20 @@
-# import pandas as pd
-# import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+from sklearn.metrics import silhouette_score
 from yellowbrick.cluster import KElbowVisualizer
-
-from sklearn.cluster import KMeans, DBSCAN
-from sklearn.metrics import sillhouette_score
+import joblib
 
 url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbg5WVW6W3c8SPNUGc3A3AL-AG32TPEQGpdzARfNICMsLFI0LQj0jporhsLCeVhkN5AoRsTkn08AYl/pub?output=csv"
-# df = pd.read_csv(url)
+df = pd.read_csv(url)
 
 # Load data
-# Tampilkan 5 baris pertamaa dengan fungsi head.
-# print(df.head())
+# Tampilkan 5 baris pertama dengan fungsi head.
+print(df.head())
 
 # Tinjau jumlah baris kolom dan jenis data dalam dataset dengan info.
 # df.info()
