@@ -9,17 +9,80 @@ from sklearn.metrics import silhouette_score
 from yellowbrick.cluster import KElbowVisualizer
 import joblib
 
+# Load data
+
+### MULAI CODE ###
+
 url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbg5WVW6W3c8SPNUGc3A3AL-AG32TPEQGpdzARfNICMsLFI0LQj0jporhsLCeVhkN5AoRsTkn08AYl/pub?output=csv"
 df = pd.read_csv(url)
 
-# Load data
-# Tampilkan 5 baris pertama dengan fungsi head.
-print(df.head())
+### SELESAI CODE ###
+
+# Tampilkan 5 baris pertama dengan function head.
+
+### MULAI CODE ###
+
+head = df.head()
+# print(head)
+
+### SELESAI CODE ###
 
 # Tinjau jumlah baris kolom dan jenis data dalam dataset dengan info.
-# df.info()
+
+### MULAI CODE ###
+
+info = df.info()
+# print(info)
+
+### SELESAI CODE ###
 
 # Menampilkan statistik deskriptif dataset dengan menjalankan describe
+
+### MULAI CODE ###
+
+describe = df.describe()
+# print(describe)
+
+### SELESAI CODE ###
+
+# Menampilkan korelasi antar fitur (Opsional Skilled 1)
+
+# Memilih kolom numerik
+numerical_cols = df.select_dtypes(include=["number"]).columns
+
+### MULAI CODE ###
+
+# Hitung matriks korelasi
+correlation = df[numerical_cols].corr()
+
+# Buat visualisasi heatmap
+plt.figure(figsize=(10, 6))
+sns.heatmap(correlation, annot=True, cmap="coolwarm", fmt=".2f", vmin=-1, vmax=1)
+plt.title("Correlation Matrix")
+# plt.show()
+
+### SELESAI CODE ###
+
+# Menampilkan histogram untuk semua kolom numerik (Opsional Skilled 1)
+
+fig, axes = plt.subplots(2, 3, figsizse=(18, 8))
+axes = axes.flatten()
+
+for i, column in enumerate(numerical_cols):
+    ### MULAI CODE ###
+
+    # Tampilkan histogram dan pastikan plot ditempatkan di subplot (axes) yang benar
+    sns.histplot(df[column], bins=20, kde=True, color='skyblue', _ )
+
+    #Atur judul dan label
+    axes[i].set_title(column)
+    axes[i].set_xlabel("Nilai")
+    axes[i].set_ylabel("Frekuensi")
+
+    ### SELESAI CODE ###
+
+    plt.tight_layout()
+    plt.show()
 
 # Mengecek dataset menggunakan isnull().sum()
 # Mengecek dataset menggunakan duplicated().sum()
