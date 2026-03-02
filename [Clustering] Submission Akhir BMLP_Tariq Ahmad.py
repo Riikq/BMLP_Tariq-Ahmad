@@ -72,17 +72,17 @@ for i, column in enumerate(numerical_cols):
     ### MULAI CODE ###
 
     # Tampilkan histogram dan pastikan plot ditempatkan di subplot (axes) yang benar
-    sns.histplot(df[column], bins=20, kde=True, color='skyblue', _ )
+    sns.histplot(df[column], bins=20, kde=True, color="skyblue", ax=axes[i])
 
-    #Atur judul dan label
+    # Atur judul dan label
     axes[i].set_title(column)
     axes[i].set_xlabel("Nilai")
     axes[i].set_ylabel("Frekuensi")
 
     ### SELESAI CODE ###
 
-    plt.tight_layout()
-    plt.show()
+plt.tight_layout()
+plt.show()
 
 # Mengecek dataset menggunakan isnull().sum()
 # Mengecek dataset menggunakan duplicated().sum()
