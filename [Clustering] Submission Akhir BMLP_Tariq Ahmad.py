@@ -65,7 +65,7 @@ plt.title("Correlation Matrix")
 
 # Menampilkan histogram untuk semua kolom numerik (Opsional Skilled 1)
 
-fig, axes = plt.subplots(2, 3, figsizse=(18, 8))
+fig, axes = plt.subplots(2, 3, figsize=(18, 8))
 axes = axes.flatten()
 
 for i, column in enumerate(numerical_cols):
@@ -82,7 +82,31 @@ for i, column in enumerate(numerical_cols):
     ### SELESAI CODE ###
 
 plt.tight_layout()
-plt.show()
+# plt.show()
+
+# Visualisasi yang lebih informatif (Opsional Advanced 1)
+
+### MULAI CODE ###
+
+plt.figure(figsize=(12, 6))
+
+# Buat visualisasi boxplot untuk melihat sebaran 'TransactionAmount' (y) berdasarkan 'CustomerOccupation' (x)
+sns.boxplot(x="CustomerOccupation", y="TransactionAmount", data=df)
+
+plt.title("Nilai Transaksi per Pekerjaan Nasabah (Boxplot)")
+
+# Putar label sumbu-x agar tidak tumpang tindih
+plt.xticks(rotation=45)
+
+# plt.show()
+
+### SELESAI CODE ###
+
+# -----------------------------------------------------------------
+# (TANTANGAN OPSIONAL)
+# -----------------------------------------------------------------
+# Sekarang, bagaimana jika kita juga ingin melihat kepadatan distribusi data di setiap kategori?
+# Coba buat visualisasi lain di bawah ini, misalnya 'violinplot' (sns.violinplot) dengan parameter yang sama.
 
 # Mengecek dataset menggunakan isnull().sum()
 # Mengecek dataset menggunakan duplicated().sum()
