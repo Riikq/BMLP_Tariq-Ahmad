@@ -168,6 +168,32 @@ df = df.drop(columns=cols_to_drop)
 df.head()
 
 ### SELESAI CODE ###
+
+# Melakukan feature encoding menggunakan LabelEncoder() untuk fitur kategorikal.
+# Pastikan kamu menggunakan function head setelah melalukan encoding.
+
+### MULAI CODE ###
+
+# Pilih semua kolom yang bertipe 'object' (kategorikal)
+categorical_cols = list(df.select_dtypes(include=["object"]).columns)
+
+encoders = {}
+
+# Loop melalui setiap kolom kategorikal
+for column in categorical_cols:
+    # Buat (instantiate) objek LabelEncoder
+    label_encoder = LabelEncoder()
+
+    # Terapkan (fit) encoder ke data dan sekaligus ubah (transform) data tersebut
+    df[column] = label_encoder.fit_transform(df[column])
+
+    # Simpan encoder
+    encoders[column] = label_encoder
+
+# Tampilkan 5 baris pertama untuk memverifikasi hasil encoding
+df.head()
+
+### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
