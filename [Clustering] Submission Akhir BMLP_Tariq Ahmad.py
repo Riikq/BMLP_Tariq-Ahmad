@@ -203,6 +203,46 @@ df.head()
 df.columns.tolist()
 
 ### SELESAI CODE ###
+
+# Melakukan Handling Outlier Data menggunakan metode drop.
+
+for col in numerical_cols:
+    ### MULAI CODE ###
+
+    # Hitung Kuartil 1 (Q1) dan Kuartil 3 (Q3)
+    Q1 = df[col].quantile(0.25)
+    Q3 = df[col].quantile(0.75)
+
+    # Hitung Interquartile Range (IQR)
+    IQR = Q3 - Q1
+
+    # Tentukan batas bawah (lower bound) dan batas atas (upper bound)
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+
+    # Filter DataFrame: Simpan hanya baris di mana nilai 'df[col]' berada DI ANTARA (inklusif) batas bawah dan batas atas.
+    df = df[(df[col] >= lower_bound) & (df[col] <= upper_bound)]
+
+    ### SELESAI CODE ###
+
+# Tampilkan statistik deskriptif setelah outlier dihapus
+df.describe()
+
+# Melakukan feature scaling menggunakan StandardScaler() untuk fitur numerik.
+# Pastikan kamu menggunakan function head setelah melalukan scaling.
+
+### MULAI CODE ###
+
+# Buat (instantiate) StandardScaler
+scaler = StandardScaler()
+
+# Terapkan (fit) scaler ke data dan sekaligus ubah (transform) data tersebut
+df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
+
+# Tampilkan 5 baris pertama untuk memverifikasi hasil scaling
+df.head()
+
+### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
