@@ -294,21 +294,21 @@ df_used.describe()
 # Melakukan visualisasi Elbow Method menggunakan KElbowVisualizer()
 
 # Buat (instantiate) model clustering
-model = KMeans()
-
-### MULAI CODE ###
-
-# Buat (instantiate) KElbowVisualizer
-#  - Masukkan 'model' yang akan digunakan
-#  - Tentukan jumlah cluster yang akan diuji (range 2 sampai 10)
-#  - Tentukan 'metric' evaluasi
-visualizer = KElbowVisualizer(model, k=(2, 10), metric="silhouette", timings=False)
-
-# Jalankan (fit) visualizer pada data
-visualizer.fit(df)
-
-# Tampilkan plot
-visualizer.show()
+# ini berhasil # model = KMeans()
+# ini berhasil #
+# ini berhasil # ### MULAI CODE ###
+# ini berhasil #
+# ini berhasil # # Buat (instantiate) KElbowVisualizer
+# ini berhasil # #  - Masukkan 'model' yang akan digunakan
+# ini berhasil # #  - Tentukan jumlah cluster yang akan diuji (range 2 sampai 10)
+# ini berhasil # #  - Tentukan 'metric' evaluasi
+# ini berhasil # visualizer = KElbowVisualizer(model, k=(2, 10), metric="silhouette", timings=False)
+# ini berhasil #
+# ini berhasil # # Jalankan (fit) visualizer pada data
+# ini berhasil # visualizer.fit(df)
+# ini berhasil #
+# ini berhasil # # Tampilkan plot
+# ini berhasil # visualizer.show()
 
 ### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
