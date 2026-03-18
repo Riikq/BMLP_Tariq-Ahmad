@@ -109,6 +109,11 @@ plt.xticks(rotation=45)
 # Coba buat visualisasi lain di bawah ini, misalnya 'violinplot' (sns.violinplot) dengan parameter yang sama.
 
 # Mengecek dataset menggunakan isnull().sum()
+
+### MULAI CODE ###
+df.isnull().sum()
+
+### SELESAI CODE ###
 # Mengecek dataset menggunakan duplicated().sum()
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
