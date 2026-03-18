@@ -22,7 +22,7 @@ df = pd.read_csv(url)
 
 ### MULAI CODE ###
 
-head = df.head()
+df.head()
 # print(head)
 
 ### SELESAI CODE ###
@@ -31,7 +31,7 @@ head = df.head()
 
 ### MULAI CODE ###
 
-info = df.info()
+df.info()
 # print(info)
 
 ### SELESAI CODE ###
@@ -40,7 +40,7 @@ info = df.info()
 
 ### MULAI CODE ###
 
-describe = df.describe()
+df.describe()
 # print(describe)
 
 ### SELESAI CODE ###
@@ -291,7 +291,26 @@ df_used.describe()
 
 ### SELESAI CODE ###
 
+# Melakukan visualisasi Elbow Method menggunakan KElbowVisualizer()
 
+# Buat (instantiate) model clustering
+model = KMeans()
+
+### MULAI CODE ###
+
+# Buat (instantiate) KElbowVisualizer
+#  - Masukkan 'model' yang akan digunakan
+#  - Tentukan jumlah cluster yang akan diuji (range 2 sampai 10)
+#  - Tentukan 'metric' evaluasi
+visualizer = KElbowVisualizer(model, k=(2, 10), metric="silhouette", timings=False)
+
+# Jalankan (fit) visualizer pada data
+visualizer.fit(df)
+
+# Tampilkan plot
+visualizer.show()
+
+### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
