@@ -309,8 +309,8 @@ df_used.describe()
 # ini berhasil #
 # ini berhasil # # Tampilkan plot
 # ini berhasil # visualizer.show()
-
-### SELESAI CODE ###
+# ini berhasil #
+# ini berhasil # ### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
