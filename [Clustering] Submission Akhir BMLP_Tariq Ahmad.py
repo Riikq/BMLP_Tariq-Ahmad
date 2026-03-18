@@ -243,6 +243,41 @@ df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
 df.head()
 
 ### SELESAI CODE ###
+
+# Melakukan binning data berdasarkan kondisi rentang nilai pada fitur numerik,
+# lakukan pada satu sampai dua fitur numerik.
+# Silahkan lakukan encode hasil binning tersebut menggunakan LabelEncoder.
+# Pastikan kamu mengerjakan tahapan ini pada satu cell.
+
+### MULAI CODE ###
+
+# Tentukan kolom numerik yang ingin Anda kelompokkan
+col_to_bin = "CustomerAge"  # (Isi dengan 'CustomerAge' atau kolom numerik lain)
+
+# Tentukan nama untuk kolom kategori baru
+new_col_name = "Usia"
+
+# Tentukan label untuk 3 grup (Anda dapat menentukan nama label-nya sendiri)
+# Mulai dari rendah --> sedang --> tinggi
+bin_labels = ["Muda", "Dewasa", "Lansia"]
+
+# Gunakan 'pd.qcut' untuk membagi data menjadi 3 kelompok
+df[new_col_name] = pd.qcut(df[col_to_bin], q=3, labels=bin_labels, duplicates="drop")
+
+# Lakukan Label Encoding pada kolom baru ini agar menjadi numerik
+label_encoder = LabelEncoder()
+df[new_col_name] = label_encoder.fit_transform(df[new_col_name])
+
+# Simpan encoder dan tambahkan nama kolom baru ke 'categorical_cols'
+encoders[new_col_name] = label_encoder
+categorical_cols.extend([new_col_name])
+
+# Tampilkan 5 baris pertama untuk memverifikasi
+df.head()
+
+### SELESAI CODE ###
+
+
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
