@@ -277,6 +277,20 @@ df.head()
 
 ### SELESAI CODE ###
 
+# Gunakan describe untuk memastikan proses clustering menggunakan dataset hasil preprocessing
+# Lengkapi kode ini dengan mengubah nama DataFrame yang akan dilatih.
+# Kode harus digunakan dan dilarang menambahkan syntax lainnya pada cell ini.
+
+### MULAI CODE ###
+
+# Buat salinan (copy) dari 'df' ke variabel 'df_used'
+df_used = df.copy()
+
+# Tampilkan ringkasan statistik dari DataFrame 'df'
+df_used.describe()
+
+### SELESAI CODE ###
+
 
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
