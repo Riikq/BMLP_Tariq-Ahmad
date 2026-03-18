@@ -194,6 +194,15 @@ for column in categorical_cols:
 df.head()
 
 ### SELESAI CODE ###
+
+# Last checking gunakan columns.tolist() untuk checking seluruh fitur yang ada.
+# Perbaiki kode di bawah ini tanpa menambahkan atau mengurangi cell code ini.
+
+### MULAI CODE ###
+
+df.columns.tolist()
+
+### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
