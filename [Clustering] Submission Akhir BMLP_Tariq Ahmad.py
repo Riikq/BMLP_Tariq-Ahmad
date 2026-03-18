@@ -145,6 +145,29 @@ df.drop_duplicates(inplace=True)
 df.duplicated().sum()
 
 ### SELESAI CODE ###
+
+# Melakukan drop pada kolom yang memiliki keterangan Date, id, dan IP Address
+
+### MULAI CODE ###
+
+# Buat list comprehension untuk memfilter nama kolom.
+#    - Iterasi melalui semua nama kolom (col).
+#    - Cek apakah 'id', 'ip', atau 'date' ada di nama kolom.
+#    - Gunakan .lower() untuk membuat perbandingan case-insensitive (mengabaikan besar/kecil).
+
+cols_to_drop = [
+    col
+    for col in df.columns
+    if "id" in col.lower() or "ip" in col.lower() or "date" in col.lower()
+]
+
+# Gunakan fungsi .drop() untuk menghapus kolom-kolom yang ada di 'cols_to_drop'.
+df = df.drop(columns=cols_to_drop)
+
+# Tampilkan 5 baris pertama untuk memverifikasi
+df.head()
+
+### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
