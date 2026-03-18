@@ -134,7 +134,17 @@ df.isnull().sum()
 
 ### SELESAI CODE ###
 
+# Menghapus data duplikat.
 
+### MULAI CODE ###
+
+# Panggil fungsi untuk menghapus baris duplikat dan pastikan agar perubahan disimpan kembali ke 'df'
+df.drop_duplicates(inplace=True)
+
+# Cek kembali dataset menggunakan duplicated().sum()
+df.duplicated().sum()
+
+### SELESAI CODE ###
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
