@@ -114,7 +114,27 @@ plt.xticks(rotation=45)
 df.isnull().sum()
 
 ### SELESAI CODE ###
+
 # Mengecek dataset menggunakan duplicated().sum()
+
+### MULAI CODE ###
+df.duplicated().sum()
+
+### SELESAI CODE ###
+
+# Menangani data yang hilang.
+
+### MULAI CODE ###
+
+# Panggil fungsi untuk menghapus baris yang hilang dan pastikan agar perubahan disimpan kembali ke 'df'
+df.dropna(inplace=True)
+
+# Cek kembali dataset menggunakan isnull().sum()
+df.isnull().sum()
+
+### SELESAI CODE ###
+
+
 # Melakukan feature scaling menggunakan MinMaxScaler() atau StandardScalar() untuk fitur numerik.
 # Pastikan kamu menggunakan function head setelah melakukan scaling.
 # Melakukan drop pada kolom yang memiliki keterangan id dan IP Address
