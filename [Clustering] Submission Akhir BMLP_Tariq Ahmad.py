@@ -59,7 +59,7 @@ correlation = df[numerical_cols].corr()
 plt.figure(figsize=(10, 6))
 sns.heatmap(correlation, annot=True, cmap="coolwarm", fmt=".2f", vmin=-1, vmax=1)
 plt.title("Correlation Matrix")
-# plt.show()
+plt.show()
 
 ### SELESAI CODE ###
 
@@ -82,7 +82,7 @@ for i, column in enumerate(numerical_cols):
     ### SELESAI CODE ###
 
 plt.tight_layout()
-# plt.show()
+plt.show()
 
 # Visualisasi yang lebih informatif (Opsional Advanced 1)
 
@@ -98,7 +98,7 @@ plt.title("Nilai Transaksi per Pekerjaan Nasabah (Boxplot)")
 # Putar label sumbu-x agar tidak tumpang tindih
 plt.xticks(rotation=45)
 
-# plt.show()
+plt.show()
 
 ### SELESAI CODE ###
 
@@ -175,7 +175,7 @@ df.head()
 ### MULAI CODE ###
 
 # Pilih semua kolom yang bertipe 'object' (kategorikal)
-categorical_cols = list(df.select_dtypes(include=["object"]).columns)
+categorical_cols = list(df.select_dtypes(include=["str"]).columns)
 
 encoders = {}
 
